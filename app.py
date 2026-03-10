@@ -39,10 +39,10 @@ input_df = pd.DataFrame([input_dict])
 # Encoding kategori
 input_encoded = pd.get_dummies(input_df)
 
-# Samakan kolom dengan training
 input_encoded = input_encoded.reindex(columns=feature_columns, fill_value=0)
 
 # Prediksi
 if st.button("Predict Price"):
     prediction = model.predict(input_encoded)
+
     st.success(f"Predicted Price: ${prediction[0]:,.2f}")
