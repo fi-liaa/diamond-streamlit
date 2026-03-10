@@ -7,7 +7,7 @@ model = pickle.load(open("model_diamond_price.pkl", "rb"))
 feature_columns = pickle.load(open("feature_columns.pkl", "rb"))
 
 st.title("💎 Diamond Price Prediction")
-st.write("Prediksi harga berlian menggunakan Machine Learning")
+st.write("Masukkan spesifikasi diamond")
 
 # INPUT USER
 carat = st.number_input("Carat", 0.0, 5.0, 1.0)
@@ -46,3 +46,4 @@ if st.button("Predict Price"):
     prediction = model.predict(input_encoded)
 
     st.success(f"Predicted Price: ${prediction[0]:,.2f}")
+
